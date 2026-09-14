@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuella Cake Tech | Delicious Cakes & Baking</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- ==============================
+         BOOTSTRAP CSS CDN
+    =============================== -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+    >
+
+    <!-- ==============================
+         INTERNAL CSS
+         EDIT YOUR STYLES HERE
+    =============================== -->
+    <style>
+
+        /* =================================
+           GENERAL WEBSITE STYLES
+        ================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            background-color: #fffafc;
+        }
+
+        :root {
+            --primary-color: #d63384;
+            --secondary-color: #f8c8dc;
+            --dark-color: #3d1f2d;
+            --light-color: #fff5f8;
+            --white: #ffffff;
+        }
+
+        /* =================================
+           NAVBAR
+        ================================== */
+
+        .navbar {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--primary-color) !important;
+        }
+
+        .navbar-brand span {
+            color: var(--dark-color);
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+            font-weight: 600;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-main {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: var(--dark-color);
+            color: white;
+        }
+
+        /* =================================
+           HERO SECTION
+        ================================== */
+
+        .hero {
+            min-height: 90vh;
+
+            /* =================================
+               CHANGE THIS TO YOUR BACKGROUND
+               IMAGE PATH
+            ================================== */
+
+            background-image:
+                linear-gradient(
+                    rgba(61, 31, 45, 0.55),
+                    rgba(61, 31, 45, 0.55)
+                ),
+                url("images/cake-background.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #f8c8dc;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons a {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-outline-light-custom {
+            border: 2px solid white;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-outline-light-custom:hover {
+            background-color: white;
+            color: var(--dark-color);
+        }
+
+        /* =================================
+           SECTION GENERAL STYLES
+        ================================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+
+        .section-title p {
+            color: #777;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        .title-line {
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        /* =================================
+           ABOUT SECTION
+        ================================== */
+
+        .about {
+            background-color: white;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-content {
+            padding: 20px;
+        }
+
+        .about-content h2 {
+            color: var(--dark-color);
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .about-list li {
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* =================================
+           CAKES SECTION
+        ================================== */
+
+        .cakes-section {
+            background-color: var(--light-color);
+        }
+
+        .cake-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .cake-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .cake-card-body {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .cake-card-body h4 {
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+
+        .cake-card-body p {
+            color: #777;
+        }
+
+        .price {
+            color: var(--primary-color);
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* =================================
+           SERVICES SECTION
+        ================================== */
+
+        .service-card {
+            background-color: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            width: 75px;
+            height: 75px;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .service-card h4 {
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* =================================
+           WHY CHOOSE US
+        ================================== */
+
+        .why-us {
+            background-color: white;
+        }
+
+        .why-box {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .why-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .why-box h4 {
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+
+        /* =================================
+           CTA SECTION
+        ================================== */
+
+        .cta {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* =================================
+           CONTACT SECTION
+        ================================== */
+
+        .contact-section {
+            background-color: var(--light-color);
+        }
+
+        .contact-box {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .contact-box h3 {
+            color: var(--dark-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info h5 {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .contact-info p {
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        .form-control {
+            padding: 13px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        /* =================================
+           FOOTER
+        ================================== */
+
+        footer {
+            background-color: #24131c;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        footer h4 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            border-top: 1px solid #49343e;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        /* =================================
+           RESPONSIVE DESIGN
+        ================================== */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                min-height: 80vh;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .about-img {
+                height: 350px;
+                margin-bottom: 25px;
+            }
+
+            .about-content {
+                padding: 0;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==========================================
+         NAVIGATION BAR
+    =========================================== -->
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                Nuella <span>Cake Tech</span>
+            </a>
+
+            <button 
+                class="navbar-toggler" 
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cakes">Cakes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a href="#cakes" class="btn-main">
+                            Buy Now
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ==========================================
+         HERO SECTION
+    =========================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+                    Sweet Moments,
+                    <span>Beautiful Cakes.</span>
+                </h1>
+
+                <p>
+                    Welcome to Nuella Cake Tech — where creativity,
+                    passion and delicious flavors come together to
+                    create cakes for every special occasion.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#cakes" class="btn-main">
+                        Explore Our Cakes
+                    </a>
+
+                    <a href="#contact" class="btn-outline-light-custom">
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         ABOUT SECTION
+    =========================================== -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <!-- CHANGE THIS IMAGE -->
+                    <img 
+                        src="images/about.png"
+                        alt="Nuella Cake" 
+                        class="about-img w-100 h-100"
+                    >
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="about-content">
+
+                        <h2>
+                            About Nuella Cake Tech
+                        </h2>
+
+                        <p>
+                            At Nuella Cake Tech, we believe every celebration
+                            deserves a beautiful and delicious cake.
+                        </p>
+
+                        <p>
+                            We create carefully designed cakes using quality
+                            ingredients and creative designs. Whether it is
+                            a birthday, wedding, anniversary or special event,
+                            we are ready to make your celebration memorable.
+                        </p>
+
+                        <ul class="about-list">
+
+                            <li>Fresh and delicious cakes</li>
+                            <li>Creative cake designs</li>
+                            <li>Birthday and wedding cakes</li>
+                            <li>Custom cake orders</li>
+
+                        </ul>
+
+                        <a href="#contact" class="btn-main">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         CAKES SECTION
+    =========================================== -->
+
+    <section class="cakes-section" id="cakes">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Our Popular Cakes
+                </h2>
+
+                <div class="title-line"></div>
+
+                <p>
+                    Choose from some of our beautiful and delicious
+                    cake creations.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <!-- CAKE 1 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cake-card">
+
+                        <!-- CHANGE IMAGE -->
+                        <img 
+                            src="images/birthday.jpg"
+                            alt="Birthday Cake"
+                        >
+
+                        <div class="cake-card-body">
+
+                            <h4>
+                                Birthday Cake
+                            </h4>
+
+                            <p>
+                                A beautiful cake made specially
+                                for your birthday celebration.
+                            </p>
+
+                            <div class="price">
+                                ₦80,000
+                            </div>
+
+                            <a href="#contact" class="btn-main">
+                                Order Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE 2 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cake-card">
+
+                        <!-- CHANGE IMAGE -->
+                        <img 
+                            src="images/wedding.jpg"
+                            alt="Wedding Cake"
+                        >
+
+                        <div class="cake-card-body">
+
+                            <h4>
+                                Wedding Cake
+                            </h4>
+
+                            <p>
+                                Elegant wedding cakes designed
+                                for your special day.
+                            </p>
+
+                            <div class="price">
+                                ₦150,000
+                            </div>
+
+                            <a href="#contact" class="btn-main">
+                                Order Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE 3 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cake-card">
+
+                        <!-- CHANGE IMAGE -->
+                        <img 
+                            src="images/chocolate.jpg"
+                            alt="Chocolate Cake"
+                        >
+
+                        <div class="cake-card-body">
+
+                            <h4>
+                                Chocolate Cake
+                            </h4>
+
+                            <p>
+                                Rich and delicious chocolate cake
+                                for chocolate lovers.
+                            </p>
+
+                            <div class="price">
+                                ₦30,000
+                            </div>
+
+                            <a href="#contact" class="btn-main">
+                                Order Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE 4 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cake-card">
+
+                        <!-- CHANGE IMAGE -->
+                        <img 
+                            src="images/cupcake.jpg"
+                            alt="Cupcakes"
+                        >
+
+                        <div class="cake-card-body">
+
+                            <h4>
+                                Cupcakes
+                            </h4>
+
+                            <p>
+                                Beautifully decorated cupcakes
+                                for parties and events.
+                            </p>
+
+                            <div class="price">
+                                ₦20,000
+                            </div>
+
+                            <a href="#contact" class="btn-main">
+                                Order Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE 5 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cake-card">
+
+                        <!-- CHANGE IMAGE -->
+                        <img 
+                            src="images/custom.jpg"
+                            alt="Custom Cake"
+                        >
+
+                        <div class="cake-card-body">
+
+                            <h4>
+                                Custom Cake
+                            </h4>
+
+                            <p>
+                                Tell us your idea and we will
+                                create something special.
+                            </p>
+
+                            <div class="price">
+                                From 50,000
+                            </div>
+
+                            <a href="#contact" class="btn-main">
+                                Order Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE 6 -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="cake-card">
+
+                        <!-- CHANGE IMAGE -->
+                        <img 
+                            src="images/desert.jpg"
+                            alt="Dessert Cake"
+                        >
+
+                        <div class="cake-card-body">
+
+                            <h4>
+                                Dessert Cake
+                            </h4>
+
+                            <p>
+                                Sweet treats perfect for
+                                celebrations and gifts.
+                            </p>
+
+                            <div class="price">
+                                ₦40,000
+                            </div>
+
+                            <a href="#contact" class="btn-main">
+                                Order Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         SERVICES SECTION
+    =========================================== -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    What We Offer
+                </h2>
+
+                <div class="title-line"></div>
+
+                <p>
+                    We provide quality baking services for
+                    all kinds of celebrations.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            🎂
+                        </div>
+
+                        <h4>
+                            Custom Cakes
+                        </h4>
+
+                        <p>
+                            Get a cake designed according
+                            to your preferred style.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            💍
+                        </div>
+
+                        <h4>
+                            Wedding Cakes
+                        </h4>
+
+                        <p>
+                            Elegant wedding cakes for
+                            your special celebration.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            🎉
+                        </div>
+
+                        <h4>
+                            Event Cakes
+                        </h4>
+
+                        <p>
+                            Beautiful cakes for birthdays,
+                            parties and events.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            🧁
+                        </div>
+
+                        <h4>
+                            Cupcakes
+                        </h4>
+
+                        <p>
+                            Delicious cupcakes for gifts,
+                            parties and celebrations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         WHY CHOOSE US
+    =========================================== -->
+
+    <section class="why-us">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Why Choose Us?
+                </h2>
+
+                <div class="title-line"></div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3 col-6">
+
+                    <div class="why-box">
+
+                        <div class="why-number">
+                            100+
+                        </div>
+
+                        <h4>
+                            Cakes
+                        </h4>
+
+                        <p>
+                            Beautiful cakes created
+                            for our customers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-6">
+
+                    <div class="why-box">
+
+                        <div class="why-number">
+                            50+
+                        </div>
+
+                        <h4>
+                            Customers
+                        </h4>
+
+                        <p>
+                            Happy customers and
+                            counting.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-6">
+
+                    <div class="why-box">
+
+                        <div class="why-number">
+                            5+
+                        </div>
+
+                        <h4>
+                            Years
+                        </h4>
+
+                        <p>
+                            Experience creating
+                            delicious cakes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-6">
+
+                    <div class="why-box">
+
+                        <div class="why-number">
+                            100%
+                        </div>
+
+                        <h4>
+                            Passion
+                        </h4>
+
+                        <p>
+                            We put love into
+                            every cake.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         CALL TO ACTION
+    =========================================== -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Have a Special Cake in Mind?
+            </h2>
+
+            <p>
+                Let Nuella Cake Tech turn your idea
+                into a beautiful and delicious cake.
+            </p>
+
+            <a href="#contact" class="btn-main">
+                Place Your Order
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         CONTACT SECTION
+    =========================================== -->
+
+    <section class="contact-section" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Contact Us
+                </h2>
+
+                <div class="title-line"></div>
+
+                <p>
+                    Ready to order your cake?
+                    Get in touch with us.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <!-- CONTACT INFORMATION -->
+
+                <div class="col-lg-5">
+
+                    <div class="contact-box">
+
+                        <h3>
+                            Get In Touch
+                        </h3>
+
+                        <div class="contact-info">
+
+                            <h5>
+                                📍 Location
+                            </h5>
+
+                            <p>
+                                Akure, Nigeria
+                            </p>
+
+                        </div>
+
+                        <div class="contact-info">
+
+                            <h5>
+                                📞 Phone
+                            </h5>
+
+                            <p>
+                                +234 901 441 4592
+                            </p>
+
+                        </div>
+
+                        <div class="contact-info">
+
+                            <h5>
+                                ✉ Email
+                            </h5>
+
+                            <p>
+                                hephzibahdaramola123@gmail.com
+                            </p>
+
+                        </div>
+
+                        <div class="contact-info">
+
+                            <h5>
+                                🕒 Opening Hours
+                            </h5>
+
+                            <p>
+                                Monday - Saturday: 8:00 AM - 6:00 PM
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <div class="col-lg-7">
+
+                    <div class="contact-box">
+
+                        <h3>
+                            Send Us a Message
+                        </h3>
+
+                        <form>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+
+                                    <input 
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Your Name"
+                                    >
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <input 
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Your Email"
+                                    >
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <input 
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Cake You Want"
+                                    >
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <textarea
+                                        class="form-control"
+                                        rows="5"
+                                        placeholder="Tell us about your order..."
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <button 
+                                        type="submit"
+                                        class="btn-main"
+                                    >
+                                        Send Message
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-5">
+
+                    <h4>
+                        Nuella Cake Tech
+                    </h4>
+
+                    <p>
+                        Creating beautiful, delicious and memorable
+                        cakes for every special occasion.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4 col-lg-3">
+
+                    <h4>
+                        Quick Links
+                    </h4>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="#home">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+
+                        <li>
+                            <a href="#cakes">Cakes</a>
+                        </li>
+
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-md-8 col-lg-4">
+
+                    <h4>
+                        Contact
+                    </h4>
+
+                    <p>
+                        📍 Akure, Nigeria
+                    </p>
+
+                    <p>
+                        📞 +234 901 441 4592
+                    </p>
+
+                    <p>
+                        ✉ hephzibahdaramola123@gmail.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                <p>
+                    &copy; 2026 Nuella Cake Tech.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
